@@ -19,7 +19,7 @@ function play() {
     analyser.getFloatFrequencyData(array)
     const value = Math.min(Math.abs(array[40]), 1000)
     console.log(value)
-    logo.minHeight = logo.minWidth = `${value}px`
+    logo.height = logo.width = `${value}px`
   }
 
   audio.play()
