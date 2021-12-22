@@ -17,6 +17,7 @@ function play() {
   function loop() {
     window.requestAnimationFrame(loop)
     analyser.getFloatFrequencyData(array)
+    console.log(array[40])
     logo.minHeight = logo.minWidth = `${array[40]}px`
   }
 
