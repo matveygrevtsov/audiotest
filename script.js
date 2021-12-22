@@ -5,7 +5,7 @@ function play() {
   audio.src = './samples/beat_guitar.mp3'
   document.body.appendChild(audio)
 
-  const logo = document.getElementById('logo').style
+  const logo = document.getElementById('logo')
   const context = new AudioContext() // AudioContext содержит в себе методы, позволяющие контролировать и изменять аудиодорожку
   const analyser = context.createAnalyser()
   const src = context.createMediaElementSource(audio)
@@ -19,7 +19,7 @@ function play() {
     analyser.getFloatFrequencyData(array)
     const value = Math.min(Math.abs(array[40]), 1000)
     console.log(value)
-    logo.height = logo.width = `${value}px`
+    logo.style = `width: ${value}px; height: ${value}px`
   }
 
   audio.play()
