@@ -17,8 +17,9 @@ function play() {
   function loop() {
     window.requestAnimationFrame(loop)
     analyser.getFloatFrequencyData(array)
-    console.log(array[40])
-    logo.minHeight = logo.minWidth = `${array[40]}px`
+    const value = Math.min(Math.abs(array[40]), 1000)
+    console.log(value)
+    logo.minHeight = logo.minWidth = `${value}px`
   }
 
   audio.play()
